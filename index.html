@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f6efe6">
-<meta name="description" content="Beauty Bloom Studio — Brown & Cream Beauty Salon Demo by Eggy Studio">
+<meta name="theme-color" content="#f1f1f1">
+<meta name="description" content="Beauty Bloom Studio — Minimal Black White Beauty Salon Demo by Eggy Studio">
 <title>Beauty Bloom Studio | Demo by Eggy Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +12,17 @@
 
 <style>
 :root{
- --bg:#fbf7f1;
- --white:#fffdfa;
- --cream:#f6efe6;
- --cream-dark:#e9dbc9;
- --beige:#d9bca0;
- --caramel:#a47756;
- --brown:#54382d;
- --brown-dark:#392820;
- --text:#49372d;
- --muted:#8b7869;
- --border:#e5d7c7;
+ --bg:#fafafa;
+ --white:#ffffff;
+ --cream:#f1f1f1;
+ --cream-dark:#e5e5e5;
+ --beige:#d0d0d0;
+ --caramel:#555555;
+ --brown:#202020;
+ --brown-dark:#101010;
+ --text:#252525;
+ --muted:#707070;
+ --border:#dddddd;
  --shadow:0 16px 42px rgba(80,51,32,.10);
 }
 *{box-sizing:border-box}
@@ -50,12 +49,12 @@ select:focus-visible{
 }
 section{scroll-margin-top:90px}
 h1,h2,h3,p{overflow-wrap:break-word}
-::selection{background:#e5cdb2}
+::selection{background:#d1d1d1}
 
 /* DEMO NOTICE */
 .demo-bar{
  background:var(--brown-dark);
- color:#fff8ef;
+ color:#ffffff;
  text-align:center;
  padding:10px 15px;
  font-size:11px;
@@ -150,8 +149,8 @@ h1,h2,h3,p{overflow-wrap:break-word}
  display:flex;
  align-items:center;
  background:
- radial-gradient(circle at 82% 20%,#ead4bc 0,transparent 39%),
- linear-gradient(130deg,#fffdf9,#f2e7d8);
+ radial-gradient(circle at 82% 20%,#e5e5e5 0,transparent 39%),
+ linear-gradient(130deg,#ffffff,#ededed);
  overflow:hidden;
 }
 .hero-grid{
@@ -194,17 +193,17 @@ h1 span{color:var(--caramel)}
  min-height:375px;
  border-radius:48% 52% 45% 55%;
  background:
- radial-gradient(circle at 75% 25%,#faf1e3,transparent 42%),
- linear-gradient(145deg,#c8aa8b,#efe0cd);
+ radial-gradient(circle at 75% 25%,#f7f7f7,transparent 42%),
+ linear-gradient(145deg,#cccccc,#eeeeee);
  display:grid;
  place-items:center;
  position:relative;
- box-shadow:0 25px 50px #74553b29;
+ box-shadow:0 25px 50px #00000016;
 }
 .hero-art .flower{
  font-size:135px;
  line-height:1;
- filter:drop-shadow(0 13px 14px #523c2c30);
+ filter:drop-shadow(0 13px 14px #00000023);
 }
 .floating{
  position:absolute;
@@ -245,7 +244,7 @@ h1 span{color:var(--caramel)}
 
 /* ABOUT */
 .about{
- background:#f1e7da;
+ background:#f3f3f3;
 }
 .about-grid{
  display:grid;
@@ -256,7 +255,7 @@ h1 span{color:var(--caramel)}
 .about-art{
  min-height:335px;
  border-radius:28px;
- background:linear-gradient(140deg,#d7bda2,#f5e9d9);
+ background:linear-gradient(140deg,#dedede,#f9f9f9);
  display:grid;
  place-items:center;
  font-size:122px;
@@ -332,7 +331,7 @@ h1 span{color:var(--caramel)}
 }
 
 /* GALLERY */
-.gallery-section{background:#f5eee5}
+.gallery-section{background:#f6f6f6}
 .gallery{
  display:grid;
  grid-template-columns:repeat(3,1fr);
@@ -363,16 +362,16 @@ h1 span{color:var(--caramel)}
  font-weight:600;
  color:var(--brown);
 }
-.art1{background:linear-gradient(140deg,#d5b89d,#f5e9d7)}
-.art2{background:linear-gradient(140deg,#bca38d,#eee1d0)}
-.art3{background:linear-gradient(140deg,#e0c2a5,#fff0dc)}
-.art4{background:linear-gradient(140deg,#b9b69d,#ece6d5)}
-.art5{background:linear-gradient(140deg,#d9bba9,#f4e8dd)}
-.art6{background:linear-gradient(140deg,#d1c0ad,#fcf1e4)}
+.art1{background:linear-gradient(140deg,#d4d4d4,#f5f5f5)}
+.art2{background:linear-gradient(140deg,#bfbfbf,#eaeaea)}
+.art3{background:linear-gradient(140deg,#d8d8d8,#ffffff)}
+.art4{background:linear-gradient(140deg,#c9c9c9,#f3f3f3)}
+.art5{background:linear-gradient(140deg,#dedede,#f4f4f4)}
+.art6{background:linear-gradient(140deg,#d3d3d3,#ffffff)}
 
 /* BOOKING DEMO */
 .booking{
- background:linear-gradient(135deg,#eaddcb,#f8eee3);
+ background:linear-gradient(135deg,#e5e5e5,#f8f8f8);
 }
 .booking-box{
  max-width:730px;
@@ -409,8 +408,8 @@ h1 span{color:var(--caramel)}
 }
 .output{
  display:none;
- background:#faf3e6;
- border:1px solid #e0ceb5;
+ background:#f5f5f5;
+ border:1px solid #d9d9d9;
  border-radius:13px;
  padding:16px;
  margin-top:17px;
@@ -443,7 +442,7 @@ h1 span{color:var(--caramel)}
 
 /* CONTACT */
 .contact{
- background:#f2e8db;
+ background:#f0f0f0;
  text-align:center;
 }
 .contact h2{
@@ -455,7 +454,7 @@ footer{
  background:var(--brown-dark);
  text-align:center;
  padding:26px 15px;
- color:#e7d7c8;
+ color:#e9e9e9;
  font-size:12px;
 }
 
@@ -465,7 +464,7 @@ footer{
  position:fixed;
  inset:0;
  z-index:90;
- background:#241710d9;
+ background:#000000d9;
  align-items:center;
  justify-content:center;
  padding:22px;
@@ -545,6 +544,18 @@ footer{
  html{scroll-behavior:auto}
  *{transition:none!important;animation:none!important}
 }
+
+/* BEAUTY BLOOM MONOCHROME REFINEMENTS */
+.hero-art{background:radial-gradient(circle at 70% 20%,#ffffff 0%,#ececec 50%,#cfcfcf 100%);border:1px solid #e1e1e1;box-shadow:0 23px 52px #00000014;isolation:isolate}
+.beauty-illustration{display:block;width:min(97%,550px);height:auto;max-height:330px;filter:drop-shadow(0 10px 12px #00000018)}
+.gallery-art,.card-icon,.about-art{filter:grayscale(1)}
+.demo-bar{background:#111;color:white}
+.primary{background:#171717;color:white}
+.primary:hover{background:#444}
+.outline{color:#202020;border-color:#bdbdbd}
+.outline:hover{background:#ededed}
+.floating{color:#333}
+@media(max-width:560px){.beauty-illustration{width:96%}.hero-art{min-height:280px}.floating.one{right:0;top:12px}.floating.two{left:0;bottom:12px}}
 </style>
 </head>
 
@@ -602,10 +613,34 @@ footer{
    </div>
   </div>
 
-  <div class="hero-art" aria-label="ภาพประกอบดอกไม้">
-   <div class="flower">🤎🌷</div>
+  <div class="hero-art" aria-label="ภาพประกอบความงามและเส้นผม">
+   <svg class="beauty-illustration" viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ภาพเส้นผมพลิ้วไหวและตลับเครื่องสำอาง สีขาวดำ">
+  <defs>
+    <linearGradient id="hairSheen" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#181818"/><stop offset="1" stop-color="#5d5d5d"/></linearGradient>
+    <linearGradient id="mirror" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fdfdfd"/><stop offset="1" stop-color="#d5d5d5"/></linearGradient>
+  </defs>
+  <g transform="translate(22,1)">
+    <path d="M190 54 C139 8 62 62 69 143 C76 203 43 225 32 255 C79 252 119 231 132 193 C126 249 100 273 85 306 C151 288 170 234 169 197 C176 259 174 288 163 326 C218 288 220 215 192 165" fill="url(#hairSheen)"/>
+    <path d="M191 58 C161 30 120 58 120 100 C120 125 135 143 153 157 C164 168 159 178 147 187 C166 193 175 189 181 183 C183 204 177 221 163 229" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".82"/>
+    <path d="M193 73 C183 83 180 111 188 135 C196 149 203 154 215 162 L202 170 C204 180 212 188 199 195 C185 202 171 197 159 189" fill="#eeeeee" stroke="#252525" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M182 130 q11 -7 20 0 M182 131 q10 10 20 0" fill="none" stroke="#202020" stroke-width="3" stroke-linecap="round"/>
+    <path d="M180 61 C141 34 100 66 96 113 C89 158 101 205 58 260 M159 51 C118 70 117 115 137 158" fill="none" stroke="#f2f2f2" stroke-width="6" stroke-linecap="round"/>
+    <path d="M131 179 C149 211 147 258 122 288" fill="none" stroke="#f2f2f2" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(312,53)" stroke="#222" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="95" cy="96" r="68" fill="#fff" stroke-width="9"/>
+    <circle cx="95" cy="96" r="54" fill="url(#mirror)" stroke="#777" stroke-width="2"/>
+    <path d="M61 69 l36 -31 M70 88 l51 -47" stroke="#fff" stroke-width="9" opacity=".88"/>
+    <path d="M32 177 Q95 158 159 177 L164 202 Q92 228 28 202Z" fill="#363636" stroke-width="6"/>
+    <ellipse cx="95" cy="185" rx="50" ry="11" fill="#e9e9e9" stroke="#fff" stroke-width="3"/>
+    <path d="M191 52 v-14 M184 45 h14 M206 76 v-9 M201 72 h10" stroke-width="4"/>
+    <path d="M196 187 C218 155 238 162 235 183 C255 184 255 205 233 210 C234 234 215 243 198 223 C177 238 158 225 170 206 C156 185 176 170 196 187Z" fill="#f5f5f5" stroke-width="4"/>
+    <circle cx="201" cy="200" r="8" fill="#555" stroke="none"/>
+    <path d="M215 237 q23 0 28 -16" fill="none" stroke-width="4"/>
+  </g>
+</svg>
    <div class="floating one">✦ Natural Elegance</div>
-   <div class="floating two">🤎 Beauty with care</div>
+   <div class="floating two">✦ Beauty with care</div>
   </div>
  </div>
 </section>
@@ -623,12 +658,12 @@ footer{
     สำหรับธุรกิจด้านความงาม
    </p>
    <p>
-    ดีไซน์สีน้ำตาลและครีม สื่อถึงความอบอุ่น
+    ดีไซน์สีขาว ดำ และเทา สื่อถึงความทันสมัย
     ความเรียบหรู และประสบการณ์ที่ผ่อนคลาย
     โดยให้ความสำคัญกับความสะดวกในการใช้งาน
    </p>
    <div class="features">
-    <span class="feature">🤎 Warm & Elegant</span>
+    <span class="feature">✦ Modern & Elegant</span>
     <span class="feature">✦ Minimal Design</span>
     <span class="feature">📱 Mobile Friendly</span>
    </div>
@@ -668,7 +703,7 @@ footer{
  <div class="container">
   <div class="section-title">
    <small>BOOKING EXPERIENCE</small>
-   <h2>สอบถามบริการ 🤎</h2>
+   <h2>สอบถามบริการ ✦</h2>
    <p>ทดลองเลือกบริการและสร้างข้อความสอบถาม</p>
   </div>
 
@@ -747,7 +782,7 @@ footer{
 <section class="section contact" id="contact">
  <div class="container">
   <span class="eyebrow">DESIGNED WITH CARE</span>
-  <h2>Beauty Bloom Studio 🤎</h2>
+  <h2>Beauty Bloom Studio ✦</h2>
   <p>
    เว็บไซต์ตัวอย่างสำหรับธุรกิจความงาม
    ออกแบบและพัฒนาโดย Eggy Studio
@@ -763,7 +798,7 @@ footer{
 <footer>
  Beauty Bloom Studio — Demo Portfolio Project
  <br>
- © <span id="year"></span> Created by Eggy Studio 🤎
+ © <span id="year"></span> Created by Eggy Studio ✦
 </footer>
 
 <!-- GALLERY POPUP -->
@@ -955,7 +990,7 @@ $("copyMessage").addEventListener("click",async()=>{
 
  try{
   await navigator.clipboard.writeText(text);
-  alert("คัดลอกข้อความเรียบร้อยค่ะ 🤎");
+  alert("คัดลอกข้อความเรียบร้อยค่ะ");
  }catch(error){
   window.prompt("คัดลอกข้อความนี้ค่ะ",text);
  }
