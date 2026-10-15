@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fff5f8">
-<meta name="description" content="Beauty Bloom Studio — ตัวอย่างเว็บไซต์ร้านเสริมสวย ออกแบบโดย Eggy Studio">
+<meta name="theme-color" content="#f6efe6">
+<meta name="description" content="Beauty Bloom Studio — Brown & Cream Beauty Salon Demo by Eggy Studio">
 <title>Beauty Bloom Studio | Demo by Eggy Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,273 +13,557 @@
 
 <style>
 :root{
- --bg:#fffaf9;--white:#fff;--text:#493c43;
- --muted:#8b7c83;--pink:#d985a7;--deep:#a74e77;
- --soft:#fff0f5;--cream:#fcf2e6;
- --border:#f0dfe5;--shadow:0 15px 40px #9d597b15;
+ --bg:#fbf7f1;
+ --white:#fffdfa;
+ --cream:#f6efe6;
+ --cream-dark:#e9dbc9;
+ --beige:#d9bca0;
+ --caramel:#a47756;
+ --brown:#54382d;
+ --brown-dark:#392820;
+ --text:#49372d;
+ --muted:#8b7869;
+ --border:#e5d7c7;
+ --shadow:0 16px 42px rgba(80,51,32,.10);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
- margin:0;background:var(--bg);color:var(--text);
- font:14px/1.8 Prompt,Arial,sans-serif;
+ margin:0;
+ background:var(--bg);
+ color:var(--text);
+ font:14px/1.85 Prompt,Arial,sans-serif;
 }
 body.modal-open{overflow:hidden}
 button,input,select{font:inherit}
 button{cursor:pointer}
 a{color:inherit;text-decoration:none}
-button:focus-visible,a:focus-visible,
+button:focus-visible,
+a:focus-visible,
 select:focus-visible{
- outline:3px solid #a74e77;outline-offset:3px;
+ outline:3px solid var(--caramel);
+ outline-offset:3px;
 }
-.container{width:min(1100px,92%);margin:auto}
+.container{
+ width:min(1120px,92%);
+ margin:auto;
+}
 section{scroll-margin-top:90px}
+h1,h2,h3,p{overflow-wrap:break-word}
+::selection{background:#e5cdb2}
+
+/* DEMO NOTICE */
 .demo-bar{
- background:#684c5a;color:white;text-align:center;
- padding:9px 15px;font-size:11px;
+ background:var(--brown-dark);
+ color:#fff8ef;
+ text-align:center;
+ padding:10px 15px;
+ font-size:11px;
+ letter-spacing:.1px;
 }
+
+/* NAVIGATION */
 .navbar{
- position:sticky;top:0;z-index:20;
- background:#fffaf9ee;backdrop-filter:blur(14px);
+ position:sticky;
+ top:0;
+ z-index:20;
+ background:rgba(255,253,249,.96);
+ backdrop-filter:blur(15px);
  border-bottom:1px solid var(--border);
 }
 .nav-inner{
- display:flex;justify-content:space-between;
- align-items:center;min-height:76px;gap:15px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:18px;
+ min-height:78px;
 }
-.logo{font-weight:800;font-size:23px;color:var(--deep)}
-.logo span{color:#d6a77e}
-.navlinks{display:flex;align-items:center;gap:25px}
-.navlinks a{font-size:13px;font-weight:600}
-.navlinks a:hover{color:var(--deep)}
+.logo{
+ font-size:22px;
+ font-weight:800;
+ color:var(--brown-dark);
+ letter-spacing:-.6px;
+ white-space:nowrap;
+}
+.logo span{color:var(--caramel)}
+.navlinks{
+ display:flex;
+ align-items:center;
+ gap:21px;
+}
+.navlinks a{
+ font-size:12px;
+ font-weight:600;
+ white-space:nowrap;
+ transition:color .2s;
+}
+.navlinks a:hover{color:var(--caramel)}
 .menu-btn{
- display:none;background:white;border:1px solid var(--border);
- border-radius:10px;padding:8px 12px;
+ display:none;
+ border:1px solid var(--border);
+ background:var(--white);
+ color:var(--brown);
+ border-radius:10px;
+ padding:8px 13px;
 }
+
+/* BUTTONS */
 .btn{
- display:inline-flex;align-items:center;justify-content:center;
- border:1px solid transparent;border-radius:100px;
- padding:12px 23px;font-weight:600;font-size:13px;
+ display:inline-flex;
+ justify-content:center;
+ align-items:center;
+ gap:8px;
+ border:1px solid transparent;
+ border-radius:100px;
+ padding:13px 23px;
+ font-weight:600;
+ font-size:13px;
  transition:transform .2s,background .2s;
 }
 .btn:hover{transform:translateY(-2px)}
-.primary{background:var(--pink);color:white}
-.primary:hover{background:var(--deep)}
-.outline{background:white;border-color:#e6bbcf;color:var(--deep)}
+.primary{
+ background:var(--brown);
+ color:white;
+}
+.primary:hover{background:var(--brown-dark)}
+.outline{
+ background:var(--white);
+ color:var(--brown);
+ border-color:var(--beige);
+}
+.outline:hover{background:var(--cream)}
+.small-btn{
+ border:1px solid var(--border);
+ background:var(--cream);
+ color:var(--brown);
+ border-radius:12px;
+ padding:9px 13px;
+ font-weight:600;
+ font-size:12px;
+}
+.small-btn:hover{background:var(--cream-dark)}
+
+/* HERO */
 .hero{
- min-height:580px;display:flex;align-items:center;
+ padding:90px 0;
+ min-height:585px;
+ display:flex;
+ align-items:center;
  background:
- radial-gradient(circle at 82% 20%,#f8dce5 0,transparent 39%),
- linear-gradient(120deg,#fffaf9,#fff0f4);
- padding:75px 0;
+ radial-gradient(circle at 82% 20%,#ead4bc 0,transparent 39%),
+ linear-gradient(130deg,#fffdf9,#f2e7d8);
+ overflow:hidden;
 }
 .hero-grid{
- display:grid;grid-template-columns:1.08fr .92fr;
- align-items:center;gap:45px;
+ display:grid;
+ grid-template-columns:1.08fr .92fr;
+ align-items:center;
+ gap:50px;
 }
 .eyebrow{
- display:inline-block;background:white;border:1px solid var(--border);
- padding:7px 15px;border-radius:30px;
- color:var(--deep);font-size:12px;font-weight:600;
+ display:inline-block;
+ padding:8px 16px;
+ background:var(--white);
+ color:var(--caramel);
+ border:1px solid var(--border);
+ border-radius:40px;
+ font-size:12px;
+ font-weight:700;
+ letter-spacing:.5px;
 }
 h1{
- font-size:clamp(40px,5.4vw,69px);
- line-height:1.25;letter-spacing:-1px;
- margin:22px 0;
+ font-size:clamp(39px,5vw,67px);
+ line-height:1.25;
+ letter-spacing:-1px;
+ margin:25px 0;
+ color:var(--brown-dark);
 }
-h1 span{color:var(--pink)}
-.hero p{font-size:15px;color:var(--muted);max-width:490px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+h1 span{color:var(--caramel)}
+.hero p{
+ font-size:15px;
+ color:var(--muted);
+ max-width:510px;
+}
+.hero-actions{
+ display:flex;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:28px;
+}
 .hero-art{
- background:linear-gradient(140deg,#f5c8d8,#fff3dd);
- min-height:375px;border-radius:45% 55% 48% 52%;
- display:grid;place-items:center;position:relative;
- box-shadow:0 24px 55px #aa68882b;
+ min-height:375px;
+ border-radius:48% 52% 45% 55%;
+ background:
+ radial-gradient(circle at 75% 25%,#faf1e3,transparent 42%),
+ linear-gradient(145deg,#c8aa8b,#efe0cd);
+ display:grid;
+ place-items:center;
+ position:relative;
+ box-shadow:0 25px 50px #74553b29;
 }
-.hero-art .flower{font-size:145px;filter:drop-shadow(0 15px 15px #9f5f7830)}
+.hero-art .flower{
+ font-size:135px;
+ line-height:1;
+ filter:drop-shadow(0 13px 14px #523c2c30);
+}
 .floating{
- position:absolute;background:white;border:1px solid var(--border);
- padding:12px 16px;border-radius:16px;
- box-shadow:var(--shadow);font-size:12px;font-weight:600;
+ position:absolute;
+ padding:12px 16px;
+ border-radius:17px;
+ font-size:12px;
+ font-weight:600;
+ background:var(--white);
+ border:1px solid var(--border);
+ box-shadow:var(--shadow);
+ color:var(--brown);
 }
-.floating.one{right:-10px;top:38px}
-.floating.two{left:-10px;bottom:32px}
-.section{padding:85px 0}
-.section-title{text-align:center;margin-bottom:38px}
+.floating.one{right:-10px;top:35px}
+.floating.two{left:-10px;bottom:30px}
+
+/* GENERAL SECTIONS */
+.section{padding:86px 0}
+.section-title{
+ text-align:center;
+ margin-bottom:40px;
+}
 .section-title small{
- color:var(--deep);font-weight:700;letter-spacing:2px;
+ color:var(--caramel);
+ font-weight:700;
+ letter-spacing:2.5px;
 }
 .section-title h2{
  font-size:clamp(28px,3.5vw,40px);
- line-height:1.35;margin:10px 0;
+ line-height:1.35;
+ color:var(--brown-dark);
+ margin:12px 0;
 }
-.section-title p{color:var(--muted);max-width:560px;margin:0 auto}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
-.card{
- background:white;border:1px solid var(--border);
- border-radius:22px;padding:26px;box-shadow:var(--shadow);
+.section-title p{
+ max-width:580px;
+ margin:0 auto;
+ color:var(--muted);
 }
-.card-icon{
- display:grid;place-items:center;font-size:35px;
- height:70px;width:70px;background:var(--soft);
- border-radius:22px;margin-bottom:16px;
-}
-.card h3{font-size:17px;margin:0 0 8px}
-.card p{color:var(--muted);font-size:13px;margin:0 0 16px}
-.price{font-weight:700;color:var(--deep);font-size:21px}
-.card-footer{
- display:flex;align-items:center;justify-content:space-between;
- gap:8px;flex-wrap:wrap;
-}
-.small-btn{
- background:var(--soft);color:var(--deep);border:0;
- padding:9px 13px;border-radius:12px;font-size:12px;
- font-weight:600;
-}
-.small-btn:hover{background:#f9dce9}
+
+/* ABOUT */
 .about{
- background:#fff2f5;
+ background:#f1e7da;
 }
 .about-grid{
- display:grid;grid-template-columns:1fr 1fr;
- gap:50px;align-items:center;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:55px;
+ align-items:center;
 }
 .about-art{
- background:linear-gradient(130deg,#f7d1df,#fbeddc);
- border-radius:28px;min-height:330px;
- display:grid;place-items:center;font-size:125px;
-}
-.about h2{font-size:35px;line-height:1.4}
-.about p{color:var(--muted)}
-.features{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.feature{
- background:white;border-radius:30px;
- padding:8px 13px;color:var(--deep);font-size:12px;
-}
-.gallery{
- display:grid;grid-template-columns:repeat(3,1fr);gap:17px;
-}
-.gallery-item{
- padding:0;border:0;background:white;overflow:hidden;
- border-radius:20px;box-shadow:var(--shadow);
- text-align:left;
-}
-.gallery-art{
- aspect-ratio:4/3;display:grid;place-items:center;
- font-size:85px;transition:transform .2s;
-}
-.gallery-item:hover .gallery-art{transform:scale(1.04)}
-.gallery-item .desc{display:block;padding:14px 17px;font-weight:600}
-.art1{background:linear-gradient(140deg,#f5d9e7,#ffeedc)}
-.art2{background:linear-gradient(140deg,#eddbfa,#fae6ef)}
-.art3{background:linear-gradient(140deg,#fce2d9,#f9e9cc)}
-.art4{background:linear-gradient(140deg,#e3e9d9,#fff3dc)}
-.art5{background:linear-gradient(140deg,#f5d6dc,#f3e5fa)}
-.art6{background:linear-gradient(140deg,#fae5ec,#e0eef0)}
-.booking{
- background:linear-gradient(135deg,#fbe1e9,#fff4ee);
-}
-.booking-box{
- max-width:730px;margin:auto;background:white;
- border:1px solid var(--border);
- padding:32px;border-radius:25px;
+ min-height:335px;
+ border-radius:28px;
+ background:linear-gradient(140deg,#d7bda2,#f5e9d9);
+ display:grid;
+ place-items:center;
+ font-size:122px;
  box-shadow:var(--shadow);
 }
-.field{margin-bottom:17px}
-.field label{display:block;font-weight:600;margin-bottom:7px}
+.about h2{
+ font-size:35px;
+ line-height:1.4;
+ color:var(--brown-dark);
+}
+.about p{color:var(--muted)}
+.features{
+ display:flex;
+ flex-wrap:wrap;
+ gap:10px;
+ margin-top:20px;
+}
+.feature{
+ background:var(--white);
+ color:var(--brown);
+ border:1px solid var(--border);
+ border-radius:30px;
+ padding:8px 14px;
+ font-size:12px;
+}
+
+/* SERVICES */
+.grid3{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:20px;
+}
+.card{
+ background:var(--white);
+ border:1px solid var(--border);
+ border-radius:22px;
+ padding:27px;
+ box-shadow:var(--shadow);
+ transition:transform .2s;
+}
+.card:hover{transform:translateY(-5px)}
+.card-icon{
+ display:grid;
+ place-items:center;
+ width:70px;
+ height:70px;
+ background:var(--cream);
+ border-radius:22px;
+ font-size:35px;
+ margin-bottom:16px;
+}
+.card h3{
+ font-size:17px;
+ margin:0 0 8px;
+ color:var(--brown-dark);
+}
+.card p{
+ color:var(--muted);
+ font-size:13px;
+ margin:0 0 18px;
+}
+.price{
+ font-size:21px;
+ color:var(--caramel);
+ font-weight:700;
+}
+.card-footer{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ flex-wrap:wrap;
+ gap:10px;
+}
+
+/* GALLERY */
+.gallery-section{background:#f5eee5}
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
+}
+.gallery-item{
+ padding:0;
+ border:1px solid var(--border);
+ text-align:left;
+ overflow:hidden;
+ border-radius:20px;
+ background:var(--white);
+ box-shadow:var(--shadow);
+ transition:transform .2s;
+}
+.gallery-item:hover{transform:translateY(-4px)}
+.gallery-art{
+ aspect-ratio:4/3;
+ display:grid;
+ place-items:center;
+ font-size:83px;
+ transition:transform .2s;
+}
+.gallery-item:hover .gallery-art{transform:scale(1.04)}
+.gallery-item .desc{
+ display:block;
+ padding:14px 18px;
+ font-weight:600;
+ color:var(--brown);
+}
+.art1{background:linear-gradient(140deg,#d5b89d,#f5e9d7)}
+.art2{background:linear-gradient(140deg,#bca38d,#eee1d0)}
+.art3{background:linear-gradient(140deg,#e0c2a5,#fff0dc)}
+.art4{background:linear-gradient(140deg,#b9b69d,#ece6d5)}
+.art5{background:linear-gradient(140deg,#d9bba9,#f4e8dd)}
+.art6{background:linear-gradient(140deg,#d1c0ad,#fcf1e4)}
+
+/* BOOKING DEMO */
+.booking{
+ background:linear-gradient(135deg,#eaddcb,#f8eee3);
+}
+.booking-box{
+ max-width:730px;
+ margin:auto;
+ padding:34px;
+ border-radius:24px;
+ background:var(--white);
+ border:1px solid var(--border);
+ box-shadow:var(--shadow);
+}
+.field{margin-bottom:18px}
+.field label{
+ display:block;
+ font-weight:600;
+ margin-bottom:8px;
+ color:var(--brown);
+}
 .field select{
- width:100%;background:white;border:1px solid #ebd6df;
- border-radius:12px;padding:13px;color:var(--text);
+ width:100%;
+ padding:13px;
+ border:1px solid var(--border);
+ background:white;
+ color:var(--brown);
+ border-radius:12px;
 }
 .hint{
- padding:13px;background:#fff5f8;
- border-radius:12px;color:var(--muted);font-size:12px;
- margin:15px 0;
+ background:var(--cream);
+ padding:14px;
+ border:1px solid var(--border);
+ color:var(--muted);
+ font-size:12px;
+ border-radius:12px;
+ margin:17px 0;
 }
 .output{
- display:none;background:#fff9eb;border:1px solid #f1e2bd;
- border-radius:14px;padding:16px;margin-top:16px;
- white-space:pre-wrap;overflow-wrap:anywhere;
+ display:none;
+ background:#faf3e6;
+ border:1px solid #e0ceb5;
+ border-radius:13px;
+ padding:16px;
+ margin-top:17px;
+ white-space:pre-wrap;
+ overflow-wrap:anywhere;
 }
 .output.show{display:block}
-.faq{max-width:800px;margin:auto}
+
+/* FAQ */
+.faq{
+ max-width:800px;
+ margin:auto;
+}
 .faq details{
- margin:10px 0;background:white;border:1px solid var(--border);
- border-radius:15px;padding:18px 20px;
+ background:var(--white);
+ border:1px solid var(--border);
+ border-radius:15px;
+ margin:11px 0;
+ padding:18px 21px;
 }
-.faq summary{cursor:pointer;font-weight:600}
-.faq p{color:var(--muted);font-size:13px}
+.faq summary{
+ cursor:pointer;
+ font-weight:600;
+ color:var(--brown);
+}
+.faq p{
+ color:var(--muted);
+ font-size:13px;
+}
+
+/* CONTACT */
 .contact{
- background:#fff2f5;text-align:center;
+ background:#f2e8db;
+ text-align:center;
 }
-.contact h2{font-size:35px}
+.contact h2{
+ font-size:35px;
+ color:var(--brown-dark);
+}
 .contact p{color:var(--muted)}
 footer{
- text-align:center;padding:26px 16px;
- color:var(--muted);font-size:12px;
+ background:var(--brown-dark);
+ text-align:center;
+ padding:26px 15px;
+ color:#e7d7c8;
+ font-size:12px;
 }
+
+/* MODAL */
 .modal{
- position:fixed;inset:0;z-index:80;
- background:#281824c9;
- display:none;align-items:center;justify-content:center;
+ display:none;
+ position:fixed;
+ inset:0;
+ z-index:90;
+ background:#241710d9;
+ align-items:center;
+ justify-content:center;
  padding:22px;
 }
 .modal.open{display:flex}
 .modal-content{
- position:relative;background:white;border-radius:24px;
- width:min(500px,100%);overflow:hidden;text-align:center;
+ position:relative;
+ background:var(--white);
+ border-radius:23px;
+ width:min(500px,100%);
+ overflow:hidden;
+ text-align:center;
 }
 .modal-preview{
- min-height:260px;display:grid;place-items:center;
- font-size:120px;
+ min-height:260px;
+ display:grid;
+ place-items:center;
+ font-size:115px;
 }
-.modal-caption{padding:17px;font-weight:700}
+.modal-caption{
+ padding:17px;
+ color:var(--brown);
+ font-weight:700;
+}
 .modal-close{
- position:absolute;right:12px;top:12px;
- width:40px;height:40px;border:0;
- background:white;border-radius:50%;font-size:22px;
+ position:absolute;
+ right:13px;
+ top:13px;
+ background:white;
+ border:0;
+ border-radius:50%;
+ height:42px;
+ width:42px;
+ font-size:24px;
+ color:var(--brown);
 }
-@media(max-width:850px){
+
+/* MOBILE */
+@media(max-width:950px){
+ .navlinks{gap:13px}
+ .logo{font-size:19px}
+ .navlinks a{font-size:11px}
+}
+@media(max-width:800px){
  .hero-grid,.about-grid{grid-template-columns:1fr}
- .hero-art{min-height:290px}
+ .hero{padding:65px 0}
+ .hero-art{min-height:315px}
  .grid3,.gallery{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:580px){
- .nav-inner{min-height:66px}
- .logo{font-size:20px}
  .menu-btn{display:block}
  .navlinks{
-  display:none;position:absolute;top:66px;
-  left:0;right:0;background:white;
-  padding:20px;flex-direction:column;align-items:stretch;
+  display:none;
+  position:absolute;
+  left:0;right:0;top:76px;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:22px;
+  flex-direction:column;
+  align-items:stretch;
+  gap:16px;
   box-shadow:var(--shadow);
  }
  .navlinks.open{display:flex}
- .hero{padding:52px 0}
+ .navlinks a{font-size:14px}
+}
+@media(max-width:560px){
+ .nav-inner{min-height:66px}
+ .navlinks{top:66px}
+ .hero{padding:54px 0}
  .hero-art .flower{font-size:105px}
- .section{padding:60px 0}
+ .section{padding:62px 0}
  .grid3,.gallery{grid-template-columns:1fr}
- .booking-box{padding:20px}
- .about h2{font-size:27px}
+ .booking-box{padding:22px}
+ .about h2,.contact h2{font-size:28px}
+ .floating{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
- *{transition:none!important}
+ *{transition:none!important;animation:none!important}
 }
 </style>
 </head>
+
 <body>
 
+<!-- DEMO PROJECT NOTICE -->
 <div class="demo-bar">
-  ✨ DEMO PROJECT — เว็บไซต์จำลองสำหรับแสดงผลงาน Eggy Studio ไม่ใช่ร้านที่เปิดให้บริการจริง
+ ✨ DEMO PROJECT — เว็บไซต์จำลองสำหรับแสดงผลงาน Eggy Studio ไม่ใช่ร้านที่เปิดให้บริการจริง
 </div>
 
+<!-- NAVIGATION -->
 <header class="navbar">
  <div class="container nav-inner">
-  <a href="#home" class="logo">✿ Beauty <span>Bloom.</span></a>
+  <a href="#home" class="logo">
+   ✿ Beauty <span>Bloom.</span>
+  </a>
   <button id="menuButton" class="menu-btn"
-    aria-expanded="false" aria-label="เปิดเมนู">☰</button>
-  <nav id="navlinks" class="navlinks">
+   aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+  <nav id="navlinks" class="navlinks" aria-label="เมนูหลัก">
    <a href="#home">Home</a>
    <a href="#about">About</a>
    <a href="#services">Services</a>
@@ -292,26 +576,36 @@ footer{
 
 <main>
 
-<!-- HOME -->
+<!-- HERO -->
 <section class="hero" id="home">
  <div class="container hero-grid">
   <div>
-   <span class="eyebrow">🌷 YOUR BEAUTY, OUR PASSION</span>
-   <h1>Feel beautiful,<br><span>Bloom naturally.</span></h1>
+   <span class="eyebrow">
+    ✦ YOUR BEAUTY, OUR PASSION
+   </span>
+   <h1>
+    Feel beautiful,<br>
+    <span>Bloom naturally.</span>
+   </h1>
    <p>
     สัมผัสบรรยากาศแห่งการดูแลความงาม
-    ที่ออกแบบมาเพื่อช่วงเวลาพิเศษของคุณ
-    เพราะความสวยงามเริ่มจากการดูแลตัวเอง
+    ที่อบอุ่น เรียบหรู และใส่ใจในรายละเอียด
+    เพราะความสวยงามเริ่มต้นจากการดูแลตัวเอง
    </p>
    <div class="hero-actions">
-    <a href="#services" class="btn primary">สำรวจบริการ ↗</a>
-    <a href="#booking" class="btn outline">ทดลองสอบถามคิว ♡</a>
+    <a href="#services" class="btn primary">
+     สำรวจบริการ ↗
+    </a>
+    <a href="#booking" class="btn outline">
+     ทดลองสอบถามคิว ♡
+    </a>
    </div>
   </div>
-  <div class="hero-art" aria-label="ภาพตกแต่งดอกไม้">
-   <div class="flower">🌸</div>
-   <div class="floating one">✨ Soft & Beautiful</div>
-   <div class="floating two">💗 Beauty with care</div>
+
+  <div class="hero-art" aria-label="ภาพประกอบดอกไม้">
+   <div class="flower">🤎🌷</div>
+   <div class="floating one">✦ Natural Elegance</div>
+   <div class="floating two">🤎 Beauty with care</div>
   </div>
  </div>
 </section>
@@ -319,23 +613,23 @@ footer{
 <!-- ABOUT -->
 <section class="section about" id="about">
  <div class="container about-grid">
-  <div class="about-art" aria-hidden="true">🌷</div>
+  <div class="about-art" aria-hidden="true">🪷</div>
   <div>
    <span class="eyebrow">ABOUT BEAUTY BLOOM</span>
-   <h2>ความงามที่เริ่มจากความใส่ใจ</h2>
+   <h2>ความงามที่เริ่มต้นจากความใส่ใจ</h2>
    <p>
     Beauty Bloom Studio เป็นร้านเสริมสวยสมมติ
-    ที่สร้างขึ้นเพื่อทดลองการออกแบบเว็บไซต์
+    ที่สร้างขึ้นเพื่อแสดงแนวคิดการออกแบบเว็บไซต์
     สำหรับธุรกิจด้านความงาม
    </p>
    <p>
-    เว็บไซต์ตัวอย่างนี้มุ่งเน้นการนำเสนอบริการ
-    ราคา ผลงาน และช่องทางสอบถามที่ใช้งานง่าย
-    ทั้งบนมือถือและคอมพิวเตอร์
+    ดีไซน์สีน้ำตาลและครีม สื่อถึงความอบอุ่น
+    ความเรียบหรู และประสบการณ์ที่ผ่อนคลาย
+    โดยให้ความสำคัญกับความสะดวกในการใช้งาน
    </p>
    <div class="features">
-    <span class="feature">🌸 Soft Design</span>
-    <span class="feature">💗 Easy to Use</span>
+    <span class="feature">🤎 Warm & Elegant</span>
+    <span class="feature">✦ Minimal Design</span>
     <span class="feature">📱 Mobile Friendly</span>
    </div>
   </div>
@@ -348,19 +642,22 @@ footer{
   <div class="section-title">
    <small>OUR SERVICES</small>
    <h2>Beauty Services ♡</h2>
-   <p>บริการและราคาสมมติสำหรับทดลองระบบเว็บไซต์</p>
+   <p>ตัวอย่างบริการและราคาสมมติสำหรับเว็บไซต์สาธิต</p>
   </div>
   <div class="grid3" id="serviceGrid"></div>
  </div>
 </section>
 
 <!-- GALLERY -->
-<section class="section" id="gallery" style="background:#fff4f7">
+<section class="section gallery-section" id="gallery">
  <div class="container">
   <div class="section-title">
    <small>OUR GALLERY</small>
-   <h2>Little Beauty Moments 🌷</h2>
-   <p>ภาพประกอบแนวคิด ไม่ใช่ภาพผลงานจากลูกค้าจริง</p>
+   <h2>Moments of Beauty ✦</h2>
+   <p>
+    แกลเลอรีภาพประกอบสำหรับทดสอบฟังก์ชัน
+    ไม่ใช่ภาพผลงานลูกค้าจริง
+   </p>
   </div>
   <div class="gallery" id="galleryGrid"></div>
  </div>
@@ -370,8 +667,8 @@ footer{
 <section class="section booking" id="booking">
  <div class="container">
   <div class="section-title">
-   <small>BOOKING DEMO</small>
-   <h2>สอบถามบริการ 💌</h2>
+   <small>BOOKING EXPERIENCE</small>
+   <h2>สอบถามบริการ 🤎</h2>
    <p>ทดลองเลือกบริการและสร้างข้อความสอบถาม</p>
   </div>
 
@@ -382,7 +679,7 @@ footer{
    </div>
 
    <div class="field">
-    <label for="bookingDay">วันที่ต้องการรับบริการ</label>
+    <label for="bookingDay">วันที่สะดวก</label>
     <select id="bookingDay">
      <option value="">ยังไม่ระบุวันที่</option>
      <option value="วันธรรมดา">วันธรรมดา</option>
@@ -392,17 +689,17 @@ footer{
    </div>
 
    <div class="hint">
-    ระบบนี้เป็น Demo เท่านั้น ยังไม่มีการจองคิวจริง
-    และไม่มีการเก็บข้อมูลผู้ใช้งาน
+    ✦ ระบบนี้เป็นตัวอย่างสำหรับ Portfolio เท่านั้น
+    ไม่ใช่การจองคิวจริง และไม่มีการเก็บข้อมูลผู้ใช้งาน
    </div>
 
-   <button class="btn primary" id="createMessage">
-    💌 สร้างข้อความสอบถาม
+   <button id="createMessage" class="btn primary">
+    สร้างข้อความสอบถาม ↗
    </button>
 
    <div id="messageOutput" class="output"></div>
 
-   <button class="btn outline" id="copyMessage"
+   <button id="copyMessage" class="btn outline"
     style="display:none;margin-top:12px">
     คัดลอกข้อความ
    </button>
@@ -414,28 +711,32 @@ footer{
 <section class="section" id="faq">
  <div class="container">
   <div class="section-title">
-   <small>QUESTIONS</small>
+   <small>QUESTIONS & ANSWERS</small>
    <h2>Frequently Asked Questions</h2>
   </div>
+
   <div class="faq">
    <details>
-    <summary>เว็บไซต์นี้เป็นร้านเสริมสวยจริงไหม?</summary>
+    <summary>Beauty Bloom เป็นร้านเสริมสวยจริงไหม?</summary>
     <p>
-     ไม่ใช่ค่ะ เว็บไซต์นี้เป็นโปรเจกต์จำลอง
-     สำหรับแสดงความสามารถในการออกแบบและสร้างเว็บไซต์
-     โดย Eggy Studio
+     ไม่ใช่ค่ะ เป็นเว็บไซต์ตัวอย่างที่ Eggy Studio
+     สร้างขึ้นเพื่อแสดงความสามารถในการออกแบบและพัฒนาเว็บไซต์
     </p>
    </details>
+
    <details>
-    <summary>กดจองคิวแล้วจะมีการจองจริงหรือไม่?</summary>
+    <summary>สามารถจองคิวผ่านระบบนี้ได้จริงไหม?</summary>
     <p>
-     ไม่มีการจองจริง ระบบทำหน้าที่สร้างข้อความตัวอย่างเท่านั้น
+     ยังไม่สามารถจองคิวจริงได้ค่ะ
+     ระบบเป็นเพียงตัวอย่างการสร้างข้อความสอบถาม
     </p>
    </details>
+
    <details>
-    <summary>เว็บไซต์รองรับมือถือหรือไม่?</summary>
+    <summary>เว็บไซต์รองรับโทรศัพท์มือถือหรือไม่?</summary>
     <p>
-     รองรับค่ะ มีการปรับหน้าตาและเมนูตามขนาดหน้าจอ
+     รองรับค่ะ ระบบปรับรูปแบบเมนูและการจัดวาง
+     ให้เหมาะกับขนาดหน้าจอ
     </p>
    </details>
   </div>
@@ -445,26 +746,30 @@ footer{
 <!-- CONTACT -->
 <section class="section contact" id="contact">
  <div class="container">
-  <span class="eyebrow">CREATED WITH LOVE</span>
-  <h2>Made by Eggy Studio 🍳</h2>
+  <span class="eyebrow">DESIGNED WITH CARE</span>
+  <h2>Beauty Bloom Studio 🤎</h2>
   <p>
-   ผลงานสาธิตการออกแบบเว็บไซต์สำหรับธุรกิจขนาดเล็ก
+   เว็บไซต์ตัวอย่างสำหรับธุรกิจความงาม
+   ออกแบบและพัฒนาโดย Eggy Studio
   </p>
-  <a href="#home" class="btn primary">กลับไปด้านบน ↑</a>
+  <a href="#home" class="btn primary">
+   กลับไปด้านบน ↑
+  </a>
  </div>
 </section>
+
 </main>
 
 <footer>
  Beauty Bloom Studio — Demo Portfolio Project
  <br>
- © <span id="year"></span> Created by Eggy Studio ♡
+ © <span id="year"></span> Created by Eggy Studio 🤎
 </footer>
 
-<!-- Gallery Modal -->
-<div id="galleryModal" class="modal" role="dialog"
- aria-modal="true" aria-label="ดูภาพตัวอย่าง"
- aria-hidden="true">
+<!-- GALLERY POPUP -->
+<div id="galleryModal" class="modal"
+ role="dialog" aria-modal="true"
+ aria-label="ภาพตัวอย่าง" aria-hidden="true">
  <div class="modal-content">
   <button id="closeModal" class="modal-close"
    aria-label="ปิดภาพ">×</button>
@@ -474,42 +779,54 @@ footer{
 </div>
 
 <script>
+/* ======================================
+  BEAUTY BLOOM — SERVICES
+====================================== */
 const services=[
  {name:"Hair Styling",th:"ออกแบบทรงผม",price:350,icon:"💇‍♀️"},
  {name:"Hair Treatment",th:"ทรีตเมนต์บำรุงผม",price:650,icon:"🌿"},
  {name:"Nail Art",th:"ทำเล็บและเพนต์เล็บ",price:450,icon:"💅"},
  {name:"Facial Care",th:"ดูแลผิวหน้า",price:790,icon:"🧖‍♀️"},
  {name:"Makeup",th:"แต่งหน้า",price:990,icon:"💄"},
- {name:"Relax & Spa",th:"สปาผ่อนคลาย",price:890,icon:"🌸"}
+ {name:"Relax & Spa",th:"สปาผ่อนคลาย",price:890,icon:"🪷"}
 ];
 
+/* ======================================
+  GALLERY — DEMO VISUALS
+====================================== */
 const gallery=[
- {name:"Soft Pink Nail Art",icon:"💅",color:"art1"},
- {name:"Natural Hair Styling",icon:"💇‍♀️",color:"art2"},
- {name:"Fresh Makeup Look",icon:"💄",color:"art3"},
- {name:"Wellness & Spa",icon:"🌿",color:"art4"},
+ {name:"Natural Nail Art",icon:"💅",color:"art1"},
+ {name:"Elegant Hair Styling",icon:"💇‍♀️",color:"art2"},
+ {name:"Soft Makeup Look",icon:"💄",color:"art3"},
+ {name:"Relaxing Spa",icon:"🌿",color:"art4"},
  {name:"Beauty Essentials",icon:"🧴",color:"art5"},
- {name:"Bloom Experience",icon:"🌷",color:"art6"}
+ {name:"Bloom Experience",icon:"🪷",color:"art6"}
 ];
 
 const $=id=>document.getElementById(id);
 
-function safe(v){
- return String(v??"").replace(/[&<>"']/g,c=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",
-  '"':"&quot;","'":"&#39;"
+function safe(value){
+ return String(value??"").replace(/[&<>"']/g,c=>({
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
  }[c]));
 }
 
+/* ======================================
+  DISPLAY SERVICES
+====================================== */
 function renderServices(){
- $("serviceGrid").innerHTML=services.map((s,i)=>`
+ $("serviceGrid").innerHTML=services.map((item,i)=>`
   <article class="card">
-   <div class="card-icon">${s.icon}</div>
-   <h3>${safe(s.name)}</h3>
-   <p>${safe(s.th)}</p>
+   <div class="card-icon">${item.icon}</div>
+   <h3>${safe(item.name)}</h3>
+   <p>${safe(item.th)}</p>
    <div class="card-footer">
     <span class="price">
-     ฿${s.price.toLocaleString("th-TH")}
+     ฿${item.price.toLocaleString("th-TH")}
     </span>
     <button class="small-btn" data-service="${i}">
      เลือกบริการ ↗
@@ -518,20 +835,48 @@ function renderServices(){
   </article>
  `).join("");
 
- $("bookingService").innerHTML=services.map((s,i)=>`
+ $("bookingService").innerHTML=services.map((item,i)=>`
   <option value="${i}">
-   ${safe(s.th)} — ฿${s.price.toLocaleString("th-TH")}
+   ${safe(item.th)} — ฿${item.price.toLocaleString("th-TH")}
   </option>
  `).join("");
 
- document.querySelectorAll("[data-service]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-   $("bookingService").value=btn.dataset.service;
-   $("booking").scrollIntoView({behavior:"smooth"});
+ document.querySelectorAll("[data-service]").forEach(button=>{
+  button.addEventListener("click",()=>{
+   $("bookingService").value=button.dataset.service;
+   $("booking").scrollIntoView({
+    behavior:"smooth"
+   });
   });
  });
 }
 
+/* ======================================
+  DISPLAY GALLERY
+====================================== */
+function renderGallery(){
+ $("galleryGrid").innerHTML=gallery.map((item,i)=>`
+  <button class="gallery-item" data-gallery="${i}"
+   aria-label="ดู ${safe(item.name)}">
+   <span class="gallery-art ${item.color}">
+    ${item.icon}
+   </span>
+   <span class="desc">
+    ${safe(item.name)} ↗
+   </span>
+  </button>
+ `).join("");
+
+ document.querySelectorAll("[data-gallery]").forEach(button=>{
+  button.addEventListener("click",()=>{
+   openGallery(Number(button.dataset.gallery));
+  });
+ });
+}
+
+/* ======================================
+  GALLERY MODAL
+====================================== */
 let lastFocusedElement=null;
 
 function openGallery(index){
@@ -542,6 +887,7 @@ function openGallery(index){
  $("modalPreview").className="modal-preview "+item.color;
  $("modalPreview").textContent=item.icon;
  $("modalCaption").textContent=item.name+" · Demo Visual";
+
  $("galleryModal").classList.add("open");
  $("galleryModal").setAttribute("aria-hidden","false");
  document.body.classList.add("modal-open");
@@ -549,72 +895,75 @@ function openGallery(index){
 }
 
 function closeGallery(){
+ if(!$("galleryModal").classList.contains("open"))return;
+
  $("galleryModal").classList.remove("open");
  $("galleryModal").setAttribute("aria-hidden","true");
  document.body.classList.remove("modal-open");
- if(lastFocusedElement?.focus)lastFocusedElement.focus();
-}
 
-function renderGallery(){
- $("galleryGrid").innerHTML=gallery.map((item,i)=>`
-  <button class="gallery-item" data-gallery="${i}"
-   aria-label="ดูภาพ ${safe(item.name)}">
-   <span class="gallery-art ${item.color}">
-    ${item.icon}
-   </span>
-   <span class="desc">${safe(item.name)} ↗</span>
-  </button>
- `).join("");
-
- document.querySelectorAll("[data-gallery]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-   openGallery(Number(btn.dataset.gallery));
-  });
- });
+ if(lastFocusedElement?.focus){
+  lastFocusedElement.focus();
+ }
 }
 
 $("closeModal").addEventListener("click",closeGallery);
+
 $("galleryModal").addEventListener("click",event=>{
- if(event.target===$("galleryModal"))closeGallery();
+ if(event.target===$("galleryModal")){
+  closeGallery();
+ }
 });
+
 document.addEventListener("keydown",event=>{
- if(event.key==="Escape")closeGallery();
- if(event.key==="Tab" &&
-    $("galleryModal").classList.contains("open")){
-  // Modal นี้มีปุ่มโต้ตอบปุ่มเดียว
+ const isOpen=$("galleryModal").classList.contains("open");
+ if(!isOpen)return;
+
+ if(event.key==="Escape"){
+  closeGallery();
+ }
+
+ if(event.key==="Tab"){
   event.preventDefault();
   $("closeModal").focus();
  }
 });
 
-// ระบบสร้างข้อความสอบถาม
+/* ======================================
+  BOOKING MESSAGE GENERATOR
+====================================== */
 $("createMessage").addEventListener("click",()=>{
- const service=services[Number($("bookingService").value)];
+ const index=Number($("bookingService").value);
+ const service=services[index];
+ if(!service)return;
+
  const day=$("bookingDay").value||"ยังไม่ระบุ";
 
- const message=
+ const text=
   "สวัสดีค่ะ สนใจสอบถามบริการ "+service.th+
-  "\nราคาเริ่มต้น (ตัวอย่าง): "+
-  service.price.toLocaleString("th-TH")+" บาท"+
+  "\nราคาตัวอย่าง: ฿"+
+  service.price.toLocaleString("th-TH")+
   "\nวันที่สะดวก: "+day+
   "\nรบกวนแจ้งรายละเอียดเพิ่มเติมค่ะ";
 
- $("messageOutput").textContent=message;
+ $("messageOutput").textContent=text;
  $("messageOutput").classList.add("show");
  $("copyMessage").style.display="inline-flex";
 });
 
 $("copyMessage").addEventListener("click",async()=>{
  const text=$("messageOutput").textContent;
+
  try{
   await navigator.clipboard.writeText(text);
-  alert("คัดลอกข้อความเรียบร้อยแล้วค่ะ 💗");
- }catch(e){
+  alert("คัดลอกข้อความเรียบร้อยค่ะ 🤎");
+ }catch(error){
   window.prompt("คัดลอกข้อความนี้ค่ะ",text);
  }
 });
 
-// เมนูมือถือ
+/* ======================================
+  MOBILE NAVIGATION
+====================================== */
 $("menuButton").addEventListener("click",()=>{
  const open=$("navlinks").classList.toggle("open");
  $("menuButton").textContent=open?"✕":"☰";
@@ -629,10 +978,14 @@ document.querySelectorAll("#navlinks a").forEach(link=>{
  });
 });
 
+/* ======================================
+  INITIALIZE
+====================================== */
 $("year").textContent=new Date().getFullYear();
 
 renderServices();
 renderGallery();
 </script>
+
 </body>
 </html>
